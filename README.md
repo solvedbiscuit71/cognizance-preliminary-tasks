@@ -12,7 +12,7 @@ There are 5 tasks representing each domain inside The Cognizance club
 I, Praveen Perumal, currently pursing B.Tech CSE in Amrita Vishwa Vidyapeetham Chennai. I am interested in computer
 science and fascinated by the problem solving and computer programming. Check out my progress in the following platforms
 
-Github: [@solvedbiscuit71](https://github.com/solvedbiscuit71/)
-Leetcode: [@solvedbiscuit71](https://leetcode.com/solvedbiscuit71/)
-Frontendmentor: [@solvedbiscuit71](https://www.frontendmentor.io/profile/solvedbiscuit71)
-CSSBattle: [@solvedbiscuit71](https://cssbattle.dev/player/solvedbiscuit71)
+Github: [@solvedbiscuit71](https://github.com/solvedbiscuit71/)  
+Leetcode: [@solvedbiscuit71](https://leetcode.com/solvedbiscuit71/)  
+Frontendmentor: [@solvedbiscuit71](https://www.frontendmentor.io/profile/solvedbiscuit71)  
+CSSBattle: [@solvedbiscuit71](https://cssbattle.dev/player/solvedbiscuit71)  
