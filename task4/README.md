@@ -23,4 +23,4 @@ polish
 
 Output
 
-![images/output.png]
+![output](images/output.png)
