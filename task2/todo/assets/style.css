@@ -4,11 +4,23 @@ html {
 
     font-family: 'Fira Sans';
     font-size: 16px;
+
+    --clr-200: hsl(230, 41%, 88%);
+    --clr-200-dark: hsl(229, 31%, 80%);
+    --clr-400: hsl(230, 10%, 65%);
+    --clr-600: hsl(242, 15%, 50%);
 }
 
 body {
     margin: 0px;
     padding: 0px;
+
+    box-sizing: border-box;
+    background-color: hsl(0, 0%, 96%);
+    min-height: 100vh;
+
+    position: relative;
+    z-index: -1;
 }
 
 *, ::before, ::after {
@@ -63,8 +75,119 @@ main {
 
 div#form {
     width: 540px;
+
+    padding: 1.5em 1.25em;
+
+    background-color: white;
+    border-radius: .75em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    gap: 1.25em;
 }
 
 div#list {
     width: 540px;
+
+    background-color: white;
 }
+
+/* --- form style --- */
+
+#btn__add {
+    padding: 0;
+    margin: 0;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+    border: 2px solid var(--clr-200);
+    background-color: white;
+
+    position: relative;
+    top: 6px;
+}
+
+#btn__add svg {
+    width: 18px;
+    height: 18px;
+
+    position: absolute;
+    top: 1px;
+    left: 1px;
+
+    color: var(--clr-200);
+}
+
+form {
+    /* below style is for grow to maximum size of the form not its childrens */
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: .625em;
+}
+
+::placeholder {
+    color: var(--clr-200);
+}
+
+#input__todo-head {
+    padding: .25em;
+
+    font-size: 1.25rem;
+    color: var(--clr-600);
+
+    border: 1.5px solid var(--clr-200);
+    border-radius: 0.25em;
+}
+
+#input__todo-head:focus {
+    border: 1.5px solid var(--clr-200-dark);
+    outline: none;
+}
+
+#input__todo-body {
+    padding: .25em;
+
+    font-size: 1rem;
+    color: var(--clr-400);
+
+    border: 1.5px solid var(--clr-200);
+    border-radius: 0.25em;
+    resize: vertical;
+}
+
+#input__todo-body:focus {
+    border: 1.5px solid var(--clr-200-dark);
+    outline: none;
+}
+
+form span {
+    color: var(--clr-600);
+
+    display: inline-block;
+    margin-right: .5em;
+}
+
+#input__todo-time {
+    margin-top: .5em;
+    border: none;
+
+    font-size: 1rem;
+    color: var(--clr-200-dark);
+}
+
+#input__todo-time::-webkit-calendar-picker-indicator {
+    background: url(./icon-calendar.svg);
+
+    position: relative;
+    right: 1em;
+}
+
+#input__todo-time:focus {
+    border: none;
+    outline: none;
+}
+
