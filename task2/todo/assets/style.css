@@ -16,6 +16,26 @@ body {
     font-family: inherit;
 }
 
+header {
+    padding: 6.8em 0em 0em;
+
+    display: flex;
+    justify-content: center;
+}
+
+header h1 {
+    margin: 0px;
+    width: 540px;
+
+    font-family: 'Rubik';
+    font-size: 3rem;
+    letter-spacing: 0.025em;
+    font-weight: 600;
+
+    color: white;
+    text-transform: uppercase;
+}
+
 div#bg {
     position: absolute;
 
@@ -29,4 +49,22 @@ div#bg {
     background-size: cover;
 
     z-index: -1;
+}
+
+main {
+    margin-top: 1em;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 1rem;
+}
+
+div#form {
+    width: 540px;
+}
+
+div#list {
+    width: 540px;
 }
