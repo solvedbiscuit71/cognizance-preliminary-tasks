@@ -8,6 +8,7 @@ html {
     --clr-200: hsl(230, 41%, 88%);
     --clr-200-dark: hsl(229, 31%, 80%);
     --clr-400: hsl(230, 10%, 65%);
+    --clr-400-dark: hsl(229, 13%, 58%);
     --clr-600: hsl(242, 15%, 50%);
 }
 
@@ -73,26 +74,21 @@ main {
     gap: 1rem;
 }
 
+/* --- form style --- */
+
 div#form {
     width: 540px;
 
     padding: 1.5em 1.25em;
 
     background-color: white;
-    border-radius: .75em;
+    border-radius: .5em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     display: flex;
     gap: 1.25em;
 }
 
-div#list {
-    width: 540px;
-
-    background-color: white;
-}
-
-/* --- form style --- */
 
 #btn__add {
     padding: 0;
@@ -191,3 +187,50 @@ form span {
     outline: none;
 }
 
+/* list style */
+
+div#list {
+    width: 540px;
+
+    background-color: white;
+    border-radius: .5em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+div#list__message {
+    font-size: 1.5rem;
+    font-family: 'Rubik';
+
+    color: var(--clr-200);
+    text-align: center;
+    
+    margin: 2em 0 1em;
+}
+
+div#list ul {
+    margin: 0;
+}
+
+div#list__footer {
+    padding: 1.5em 1.375em;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+div#list__footer span {
+    color: var(--clr-400);
+}
+
+div#list__footer button {
+    color: var(--clr-400);
+    font-size: 1rem;
+
+    border: none;
+    background-color: transparent;
+}
+
+div#list__footer button:hover {
+    color: var(--clr-400-dark);
+    cursor: pointer;
+}
