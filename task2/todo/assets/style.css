@@ -166,6 +166,12 @@ form {
     border: 1.5px solid var(--clr-200);
     border-radius: 0.25em;
     resize: vertical;
+
+    line-height: 1.25em;
+
+    min-height: 3em;
+    max-height: 4.25em;
+    overflow: auto;
 }
 
 #input__todo-body:focus {
