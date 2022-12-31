@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+
+    <script src="./assets/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,18 +24,16 @@
     <div id="bg"></div>
 
     <main>
-        <div id="form">
-        <button id="btn__add">
+        <div id="form__container">
+        <button id="btn__add" type="submit">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
         </button>
-        <form action="#" method="post">
+        <form id="form">
             <input type="text" name="head" id="input__todo-head" placeholder="Title">
             <textarea name="body" id="input__todo-body" placeholder="Description (optional)"></textarea>
-            <div>
-            <span>Deadline: </span><input type="datetime-local" name="time" id="input__todo-time" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}">
-            </div>
+            <label for="time"><span>Deadline: </span> <input type="datetime-local" name="time" id="input__todo-time" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}"></label>
         </form>
         </div>
 
