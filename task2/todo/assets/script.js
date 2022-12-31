@@ -28,6 +28,9 @@ const setTodoList = newList => {
     tracker.innerText = newList.reduce((count, todo) => todo.isDone ? count - 1 : count, newList.length)
 
     todoList = newList
+
+    localStorage.setItem('todoList', JSON.stringify(todoList))
+    localStorage.setItem('nextId', JSON.stringify(nextId))
 }
 
 /* handlers */
@@ -52,12 +55,12 @@ const handleSubmit = _ => {
 }
 
 const handleDelete = e => {
-    const id = e.path[0].dataset['id']
+    const id = e.composedPath()[0].dataset['id']
     setTodoList(todoList.filter(todo => todo.id !== +id))
 }
 
 const handleDone = e => {
-    const id = e.path[0].dataset['id']
+    const id = e.composedPath()[0].dataset['id']
     setTodoList(todoList.map(todo => {
         if (todo.id == id)
             todo.isDone = !todo.isDone
@@ -73,6 +76,10 @@ const handleClear = _ => {
 submitBtn.addEventListener('click', handleSubmit)
 clearBtn.addEventListener('click', handleClear)
 form.addEventListener('submit', e => e.preventDefault())
+
+/* load previous session todolist form localStorage */
+setTodoList(loadFromStorage('todoList', '[]'))
+nextId = loadFromStorage('nextId', '0')
 
 /* utility functions */
 function format(T) {
@@ -96,4 +103,11 @@ function generate(L) {
 
         return li
     })
+}
+
+function loadFromStorage(key, value) {
+    if (localStorage.getItem(key) == null)
+        localStorage.setItem(key, value)
+    
+    return JSON.parse(localStorage.getItem(key))
 }
