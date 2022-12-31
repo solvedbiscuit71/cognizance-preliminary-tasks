@@ -5,13 +5,12 @@ html {
     font-family: 'Fira Sans';
     font-size: 16px;
 
-    --clr-200-light: hsl(230, 50%, 93%);
-    --clr-200: hsl(230, 41%, 88%);
-    --clr-200-dark: hsl(229, 31%, 80%);
-    --clr-400: hsl(230, 10%, 65%);
-    --clr-400-dark: hsl(229, 13%, 58%);
-    --clr-600: hsl(242, 15%, 50%);
-    --clr-600-dark: hsl(243, 18%, 41%);
+    --clr-200: hsl(230, 62%, 84%);
+    --clr-300: hsl(230, 41%, 75%);
+    --clr-400: hsl(230, 70%, 79%);
+    --clr-500: hsl(230, 53%, 72%);
+    --clr-600: hsl(230, 51%, 67%);
+    --clr-700: hsl(230, 52%, 64%);
 }
 
 body {
@@ -57,9 +56,9 @@ header h1 {
     left: 0px;
     top: 0px;
     width: 100%;
-    height: min(30vw, 432px);
+    height: 100vh;
 
-    background: linear-gradient(90deg, rgba(128, 20, 214, 0.2) 0%, rgba(0, 194, 255, 0.2) 100%), url(./background.jpeg);
+    background: linear-gradient(135deg, rgba(137, 20, 233, 0.45) 0%, rgba(2, 161, 209, 0.45) 100%), url(./background.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -96,15 +95,15 @@ main {
     padding: 0;
     margin: 0;
 
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
 
-    border: 1.5px solid var(--clr-200);
+    border: 2px solid var(--clr-200);
     border-radius: 50%;
     background-color: white;
 
     position: relative;
-    top: 6px;
+    top: 4px;
 
     transition: background-color 200ms ease-in-out;
 
@@ -123,6 +122,11 @@ main {
 #btn__add:hover {
     background-color: var(--clr-200);
     cursor: pointer;
+}
+
+#btn__add:focus {
+    border-color: var(--clr-300);
+    outline: none;
 }
 
 #btn__add:hover svg {
@@ -147,14 +151,15 @@ form {
     padding: .25em;
 
     font-size: 1.25rem;
-    color: var(--clr-600);
+    font-weight: 500;
+    color: var(--clr-700);
 
     border: 1.5px solid var(--clr-200);
     border-radius: 0.25em;
 }
 
 #input__todo-head:focus {
-    border: 1.5px solid var(--clr-200-dark);
+    border: 1.5px solid var(--clr-300);
     outline: none;
 }
 
@@ -176,12 +181,13 @@ form {
 }
 
 #input__todo-body:focus {
-    border: 1.5px solid var(--clr-200-dark);
+    border: 1.5px solid var(--clr-300);
     outline: none;
 }
 
 #form span {
     color: var(--clr-600);
+    font-weight: 500;
 
     display: inline-block;
     margin-right: .5em;
@@ -192,7 +198,7 @@ form {
     border: none;
 
     font-size: 1rem;
-    color: var(--clr-200-dark);
+    color: var(--clr-300);
 }
 
 #input__todo-time::-webkit-calendar-picker-indicator {
@@ -209,6 +215,8 @@ form {
 #input__todo-time:focus {
     border: none;
     outline: none;
+
+    color: var(--clr-400);
 }
 
 /* list style */
@@ -223,7 +231,7 @@ div#list {
 
 #list__message {
     font-size: 1.5rem;
-    font-family: 'Rubik';
+    font-weight: 400;
 
     color: var(--clr-200);
     text-align: center;
@@ -263,7 +271,7 @@ div#list {
 }
 
 #list li:not(.last) {
-    border-bottom: .05px solid var(--clr-200);
+    border-bottom: .25px solid var(--clr-200);
 }
 
 .content {
@@ -278,8 +286,8 @@ div#list {
 
 .title h2 {
     font-size: 1.25rem;
-    font-weight: 400;
-    color: var(--clr-600);
+    font-weight: 500;
+    color: var(--clr-700);
 
     margin: 0;
 
@@ -290,7 +298,7 @@ div#list {
 
 li.done h2 {
     text-decoration: line-through;
-    color: var(--clr-200-dark);
+    color: var(--clr-300);
 }
 
 .desc {
@@ -308,7 +316,7 @@ li.done h2 {
 
 li.done .desc p:first-of-type {
     text-decoration: line-through;
-    color: var(--clr-200-dark);
+    color: var(--clr-200);
 }
 
 .desc p:first-of-type {
@@ -324,10 +332,15 @@ li.done .desc p:first-of-type {
 
 .desc span:first-of-type {
     color: var(--clr-600);
+    font-weight: 500;
+}
+
+li.done .desc span:first-of-type {
+    color: var(--clr-300);
 }
 
 li.done .desc span:last-of-type {
-    color: var(--clr-200-dark);
+    color: var(--clr-200);
     text-decoration: line-through;
 }
 
@@ -335,18 +348,16 @@ li.done .desc span:last-of-type {
     width: 24px;
     height: 24px;
 
-    border: 1.5px solid var(--clr-200);
+    border: 2px solid var(--clr-200);
     border-radius: 50%;
     background-color: white;
 
     position: relative;
-    top: 2px;
-
     flex-shrink: 0;
 }
 
 .checkbox:hover {
-    border: 1.5px solid var(--clr-200-dark);
+    border: 2px solid var(--clr-400);
     cursor: pointer;
 }
 
@@ -374,7 +385,7 @@ li.done .checkbox {
     width: 22px;
     height: 22px;
 
-    color: var(--clr-400-dark);
+    color: var(--clr-500);
 }
 
 .trash:hover {
@@ -387,7 +398,7 @@ li.done .checkbox {
 
 
 #list__footer {
-    border-top: 1.5px solid var(--clr-200-dark);
+    border-top: 1.5px solid var(--clr-300);
     padding: 1.25em 1.375em;
 
     display: flex;
@@ -395,18 +406,25 @@ li.done .checkbox {
 }
 
 #list__footer span {
-    color: var(--clr-400);
+    color: var(--clr-500);
+    font-weight: 500;
 }
 
 #list__footer button {
-    color: var(--clr-400);
+    color: var(--clr-500);
     font-size: 1rem;
+    font-weight: 500;
 
     border: none;
     background-color: transparent;
 }
 
+#list__footer button:focus {
+    color: var(--clr-700);
+    outline: none;
+}
+
 #list__footer button:hover {
-    color: var(--clr-400-dark);
+    color: var(--clr-700);
     cursor: pointer;
 }
