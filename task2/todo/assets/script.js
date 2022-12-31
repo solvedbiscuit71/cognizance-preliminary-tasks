@@ -28,7 +28,7 @@ const handleSubmit = _ => {
         isDone: false,
 
         head,
-        body: body || 'No description provided',
+        body: body || 'No Description',
         time: time === '' ? '-' : format(time),
 
         hasBody: body !== '',
