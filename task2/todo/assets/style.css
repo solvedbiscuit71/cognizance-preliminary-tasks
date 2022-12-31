@@ -55,7 +55,7 @@ div#bg {
     left: 0px;
     top: 0px;
     width: 100%;
-    height: 30vw;
+    height: min(30vw, 432px);
 
     background: linear-gradient(90deg, rgba(128, 20, 214, 0.2) 0%, rgba(0, 194, 255, 0.2) 100%), url(./background.jpeg);
     background-repeat: no-repeat;
@@ -204,7 +204,10 @@ div#list__message {
     color: var(--clr-200);
     text-align: center;
     
-    margin: 2em 0 1em;
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 div#list ul {
@@ -212,7 +215,8 @@ div#list ul {
 }
 
 div#list__footer {
-    padding: 1.5em 1.375em;
+    border-top: 1.5px solid var(--clr-200-dark);
+    padding: 1.25em 1.375em;
 
     display: flex;
     justify-content: space-between;
