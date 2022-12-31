@@ -47,7 +47,7 @@ const handleSubmit = _ => {
         id: nextId++,
         isDone: false,
 
-        head,
+        head: head.length < 42 ? head : head.slice(0,42) + ' ...',
         body: body || 'No Description',
         time: time === '' ? '-' : format(time),
     }])
