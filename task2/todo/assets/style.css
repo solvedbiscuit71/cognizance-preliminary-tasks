@@ -5,6 +5,7 @@ html {
     font-family: 'Fira Sans';
     font-size: 16px;
 
+    --clr-200-light: hsl(230, 50%, 93%);
     --clr-200: hsl(230, 41%, 88%);
     --clr-200-dark: hsl(229, 31%, 80%);
     --clr-400: hsl(230, 10%, 65%);
@@ -249,6 +250,10 @@ div#list {
 
 }
 
+#list li:hover {
+    cursor: default;
+}
+
 #list li:not(.last) {
     border-bottom: .05px solid var(--clr-200);
 }
@@ -275,6 +280,11 @@ div#list {
     overflow: hidden;
 }
 
+li.done h2 {
+    text-decoration: line-through;
+    color: var(--clr-200-dark);
+}
+
 .desc {
     display: none;
 }
@@ -288,6 +298,11 @@ div#list {
     color: var(--clr-400);
 }
 
+li.done .desc p:first-of-type {
+    text-decoration: line-through;
+    color: var(--clr-200-dark);
+}
+
 .desc p:first-of-type {
     line-height: 1.25em;
 
@@ -299,8 +314,13 @@ div#list {
     margin: 0;
 }
 
-.desc span {
+.desc span:first-of-type {
     color: var(--clr-600);
+}
+
+li.done .desc span:last-of-type {
+    color: var(--clr-200-dark);
+    text-decoration: line-through;
 }
 
 .checkbox {
@@ -317,6 +337,29 @@ div#list {
     flex-shrink: 0;
 }
 
+.checkbox:hover {
+    border: 1.5px solid var(--clr-200-dark);
+    cursor: pointer;
+}
+
+.checkbox::before {
+    position: absolute;
+    content: '';
+
+    width: 16px;
+    height: 16px;
+
+    top: 4px;
+    left: 4px;
+
+    background-image: url(./icon-check.svg);
+}
+
+li.done .checkbox {
+    border: none;
+    background: linear-gradient(135deg, hsl(273, 83%, 46%) 0%, hsl(194, 100%, 50%) 100%);
+}
+
 .trash {
     display: none;
 
@@ -324,6 +367,10 @@ div#list {
     height: 22px;
 
     color: var(--clr-400-dark);
+}
+
+.trash:hover {
+    cursor: pointer;
 }
 
 #list li:hover .trash {
