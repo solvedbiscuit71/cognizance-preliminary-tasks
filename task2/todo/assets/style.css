@@ -234,11 +234,19 @@ div#list {
     justify-content: center;
 }
 
+#list__message.hide {
+    display: none;
+}
+
 #list ul {
     margin: 0;
     padding: 0;
 
     list-style: none;
+}
+
+#list ul.hide {
+    display: none;
 }
 
 #list li {

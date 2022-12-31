@@ -1,14 +1,31 @@
 /* global variables */
-const ul = document.getElementById('list')
+const ul = document.getElementById('todos')
 const form = document.getElementById('form')
 const submitBtn = document.getElementById('btn__add')
+const clearBtn = document.getElementById('btn__clear')
+
+const listMessage = document.getElementById('list__message')
+const tracker = document.getElementById('tracker')
 
 let nextId = 0
 let todoList = []
 
 /* reactivity */
 const setTodoList = newList => {
-    // when the list is modified it should reflect in the UI
+    // constructing a new DOM
+    ul.innerHTML = ''
+    generate(newList).forEach(li => {
+        ul.appendChild(li)
+    });
+
+    // toggle `list is empty` message
+    if (todoList.length != newList.length && (todoList.length == 0 || newList.length == 0))  {
+        listMessage.classList.toggle('hide')
+        ul.classList.toggle('hide')
+    }
+
+    // count no of active todos
+    tracker.innerText = newList.reduce((count, todo) => todo.isDone ? count - 1 : count, newList.length)
 
     todoList = newList
 }
@@ -30,15 +47,31 @@ const handleSubmit = _ => {
         head,
         body: body || 'No Description',
         time: time === '' ? '-' : format(time),
-
-        hasBody: body !== '',
-        hasTime: time !== ''
     }])
     form.reset()
 }
 
+const handleDelete = e => {
+    const id = e.path[0].dataset['id']
+    setTodoList(todoList.filter(todo => todo.id !== +id))
+}
+
+const handleDone = e => {
+    const id = e.path[0].dataset['id']
+    setTodoList(todoList.map(todo => {
+        if (todo.id == id)
+            todo.isDone = !todo.isDone
+        return todo
+    }))
+}
+
+const handleClear = _ => {
+    setTodoList(todoList.filter(todo => !todo.isDone))
+}
+
 /* attach event listeners */
 submitBtn.addEventListener('click', handleSubmit)
+clearBtn.addEventListener('click', handleClear)
 form.addEventListener('submit', e => e.preventDefault())
 
 /* utility functions */
@@ -50,4 +83,17 @@ function format(T) {
     const hour12 = +hour24 < 12 ? +hour24 : +hour24 % 12
 
     return `${day}/${month}/${year}, ${hour12 === 0 ? 12 : hour12}:${min} ${duration}`
+}
+
+function generate(L) {
+    return L.map(todo => {
+        const li = document.createElement('li')
+        todo.isDone && li.classList.add('done')
+
+        li.innerHTML = `<button class="checkbox" data-id="${todo.id}"></button><div class="content"><div class="title"><h2>${todo.head}</h2><img class="trash" data-id="${todo.id}" src="./assets/icon-trash.svg" alt="delete"></div><div class="desc"><p>${todo.body}</p><p><span>Deadline: </span> <span>${todo.time}</span></p></div></div>`
+        li.getElementsByClassName('trash')[0].addEventListener('click', handleDelete)
+        li.getElementsByClassName('checkbox')[0].addEventListener('click', handleDone)
+
+        return li
+    })
 }

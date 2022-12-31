@@ -38,91 +38,18 @@
         </div>
 
         <div id="list">
-            <div id="list__message" style="display: none;">
+            <div id="list__message">
                 list is empty, add a new todo...
             </div>
 
-            <ul>
+            <ul id="todos" class="hide">
                 <!-- contents of each todo item -->
 
-                <li class="done">
-                    <button class="checkbox"></button>   
-
-                    <div class="content">
-                        <div class="title">
-                            <h2>Jag around the park 3x</h2>
-                            <img class="trash" src="./assets/icon-trash.svg" alt="delete">
-                        </div>
-                        <div class="desc">
-                            <p>
-                                For today, It is planned to reduces around 200kcal and 
-                                jagging around the park is a good fit.
-                            </p>
-                            <p><span>Deadline: </span> <span>08/12/2022 8:00 PM</span></p>
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <button class="checkbox">
-                    </button>   
-
-                    <div class="content">
-                        <div class="title">
-                            <h2>10 minutes mediation</h2>
-                            <img class="trash" src="./assets/icon-trash.svg" alt="delete">
-                        </div>
-                        <div class="desc">
-                            <p>
-                                I have so stressed today, I small mediation will surely
-                                help me out.
-                            </p>
-                            <p><span>Deadline: </span> <span>-</span></p>
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <button class="checkbox">
-                    </button>   
-
-                    <div class="content">
-                        <div class="title">
-                            <h2>This Particular Task Is Divided into 2 Sections. One Being Designing & The Other Being Development.</h2>
-                            <img class="trash" src="./assets/icon-trash.svg" alt="delete">
-                        </div>
-                        <div class="desc">
-                            <p>
-                                Adobe XD Is A Powerful And Easy-To-Use Vector-Based Experience Design Platform, It Helps You Craft Prototypes That Look And Feel Like The Real Thing, 
-                                So You Can Communicate Your Design Vision. For More Information Visit Adobe XD
-                            </p>
-                            <p><span>Deadline: </span> <span>01/01/2023, 10:00 AM</span></p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="last">
-                    <button class="checkbox">
-                    </button>   
-
-                    <div class="content">
-                        <div class="title">
-                            <h2>Completed this project before 11:00 PM</h2>
-                            <img class="trash" src="./assets/icon-trash.svg" alt="delete">
-                        </div>
-                        <div class="desc">
-                            <p>
-                                No Description
-                            </p>
-                            <p><span>Deadline: </span> <span>-</span></p>
-                        </div>
-                    </div>
-                </li>
             </ul>
 
             <div id="list__footer">
-                <span>0 Items left</span>
-                <button>Clear Completed</button>
+                <span><span id="tracker">0</span> Items left</span>
+                <button id="btn__clear">Clear Completed</button>
             </div>
         </div>
     </main>
