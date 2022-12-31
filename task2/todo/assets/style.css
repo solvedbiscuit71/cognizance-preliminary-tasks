@@ -103,6 +103,8 @@ div#form {
 
     position: relative;
     top: 6px;
+
+    transition: background-color 200ms ease-in-out;
 }
 
 #btn__add svg {
@@ -114,6 +116,18 @@ div#form {
     left: 1px;
 
     color: var(--clr-200);
+
+    transition: color 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+#btn__add:hover {
+    background-color: var(--clr-200);
+    cursor: pointer;
+}
+
+#btn__add:hover svg {
+    color: white;
+    transform: rotate(180deg);
 }
 
 form {
@@ -180,6 +194,10 @@ form span {
 
     position: relative;
     right: 1em;
+}
+
+#input__todo-time::-webkit-calendar-picker-indicator:hover {
+    cursor: pointer;
 }
 
 #input__todo-time:focus {
